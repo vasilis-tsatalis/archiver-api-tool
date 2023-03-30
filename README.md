@@ -4,7 +4,7 @@ Zipping functionalities for different cases
 # Create SSL Commands
 
 ```bash
-$ cd create-secure-server-api
+$ cd archiver-api-tool
 $ mkdir certs
 $ cd certs
 ```
@@ -44,6 +44,22 @@ $ vim .env
 ```bash
 $ cd middleware
 $ mkdir logs
+```
+
+# Create Zip files Directory
+
+```bash
+$ cd ./
+$ mkdir assets
+$ cd assets
+$ mkdir zip_files
+```
+
+# Create Temporary Directory
+
+```bash
+$ cd ./
+$ mkdir temp
 ```
 
 # Browser website

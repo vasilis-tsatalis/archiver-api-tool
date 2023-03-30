@@ -105,3 +105,7 @@ dist
 
 # Certs
 *.pem
+
+# Dirs
+zip_files
+temp
