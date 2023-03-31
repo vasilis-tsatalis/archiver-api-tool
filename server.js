@@ -5,6 +5,8 @@ const https = require("https");
 const fs = require('fs');
 const path = require('path');
 const morgan = require('morgan');
+const archiver = require('archiver');
+archiver.registerFormat('zip-encrypted', require("archiver-zip-encrypted"));
 
 // Read system parameters
 require('dotenv/config');
@@ -17,7 +19,8 @@ const BASE_URL = process.env.BASE_URL || '/zip';
 const PORT = process.env.PORT || 3334;
 
 const app = express();
-app.use(express.json());
+app.use(express.json({limit: process.env.REQUEST_LIMIT}));
+app.use(express.urlencoded({extended: true, limit: process.env.REQUEST_LIMIT}));
 
 // setup the logger - keep access logs file or not
 if (process.env.WRITE_ACCESS_LOGS == 'Y') {
